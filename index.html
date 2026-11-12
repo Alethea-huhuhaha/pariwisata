@@ -332,7 +332,7 @@
 
         <div class="dest-grid">
             <article class="dest-card reveal" data-category="budaya">
-                <button class="dest-media dest-media--button" type="button" data-siger-open aria-haspopup="dialog" aria-controls="sigerModal" aria-label="Buka sejarah Menara Siger">
+                <button class="dest-media dest-media--button" type="button" data-modal-open="sigerModal" aria-haspopup="dialog" aria-controls="sigerModal" aria-label="Buka sejarah Menara Siger">
                     <img src="img/dest-menara.jpg" alt="Menara Siger, ikon Provinsi Lampung" loading="lazy" decoding="async">
                     <span class="dest-tag">Ikon Budaya</span>
                     <span class="dest-cta">Sejarah Menara Siger <span aria-hidden="true">&rarr;</span></span>
@@ -341,12 +341,12 @@
                     <p class="dest-loc">Bakauheni, Lampung Selatan</p>
                     <h3>Menara Siger</h3>
                     <p>Menara berlapis emas di atas Bukit Gamping ini menjadi gerbang Lampung sekaligus titik nol Sumatra. Buka foto untuk membaca sejarah lengkapnya.</p>
-                    <a class="text-link" href="#sigerModal" data-siger-open aria-haspopup="dialog" aria-controls="sigerModal">Baca sejarah <span aria-hidden="true">&rarr;</span></a>
+                    <a class="text-link" href="#sigerModal" data-modal-open="sigerModal" aria-haspopup="dialog" aria-controls="sigerModal">Baca sejarah <span aria-hidden="true">&rarr;</span></a>
                 </div>
             </article>
 
             <article class="dest-card reveal" data-category="bahari">
-                <button class="dest-media dest-media--button" type="button" data-pahawang-open aria-haspopup="dialog" aria-controls="pahawangModal" aria-label="Buka sejarah Pulau Pahawang">
+                <button class="dest-media dest-media--button" type="button" data-modal-open="pahawangModal" aria-haspopup="dialog" aria-controls="pahawangModal" aria-label="Buka sejarah Pulau Pahawang">
                     <img src="img/dest-pahawang.jpg" alt="Laut biru jernih Pulau Pahawang" loading="lazy" decoding="async">
                     <span class="dest-tag">Pantai</span>
                     <span class="dest-cta">Sejarah Pulau Pahawang <span aria-hidden="true">&rarr;</span></span>
@@ -355,12 +355,12 @@
                     <p class="dest-loc">Pesawaran, Lampung</p>
                     <h3>Pulau Pahawang</h3>
                     <p>Pulau dengan air sebening kristal di Teluk Ratai, cocok untuk snorkeling, island hopping, dan menikmati terumbu karang. Buka foto untuk membaca sejarah dan tips berkunjungnya.</p>
-                    <a class="text-link" href="#pahawangModal" data-pahawang-open aria-haspopup="dialog" aria-controls="pahawangModal">Baca sejarah <span aria-hidden="true">&rarr;</span></a>
+                    <a class="text-link" href="#pahawangModal" data-modal-open="pahawangModal" aria-haspopup="dialog" aria-controls="pahawangModal">Baca sejarah <span aria-hidden="true">&rarr;</span></a>
                 </div>
             </article>
 
             <article class="dest-card reveal" data-category="akomodasi">
-                <button class="dest-media dest-media--button" type="button" data-teluk-open aria-haspopup="dialog" aria-controls="telukPahawangModal" aria-label="Buka sejarah Teluk Pahawang">
+                <button class="dest-media dest-media--button" type="button" data-modal-open="telukModal" aria-haspopup="dialog" aria-controls="telukModal" aria-label="Buka sejarah Teluk Pahawang">
                     <img src="img/pahawang.jpg" alt="Pondok bambu di atas laut Teluk Pahawang" loading="lazy" decoding="async">
                     <span class="dest-tag">Akomodasi</span>
                     <span class="dest-cta">Sejarah Teluk Pahawang <span aria-hidden="true">&rarr;</span></span>
@@ -369,67 +369,78 @@
                     <p class="dest-loc">Pesawaran, Lampung</p>
                     <h3>Teluk Pahawang</h3>
                     <p>Deretan pondok bambu di atas air yang menghadirkan pengalaman menginap tenang di tengah laut. Buka foto untuk melihat cerita dan tips menginapnya.</p>
-                    <a class="text-link" href="#telukPahawangModal" data-teluk-open aria-haspopup="dialog" aria-controls="telukPahawangModal">Baca sejarah <span aria-hidden="true">&rarr;</span></a>
+                    <a class="text-link" href="#telukModal" data-modal-open="telukModal" aria-haspopup="dialog" aria-controls="telukModal">Baca sejarah <span aria-hidden="true">&rarr;</span></a>
                 </div>
             </article>
 
             <article class="dest-card reveal" data-category="akomodasi">
-                <button class="dest-media dest-media--button" type="button" data-teluk-open aria-haspopup="dialog" aria-controls="mutunModal" aria-label="Buka sejarah Teluk Pahawang">
+                <button class="dest-media dest-media--button" type="button" data-modal-open="mutunModal" aria-haspopup="dialog" aria-controls="mutunModal" aria-label="Buka sejarah Teluk Pahawang">
                     <img src="img/mutun.jpg" alt="Pondok bambu di atas laut Teluk Pahawang" loading="lazy" decoding="async">
                     <span class="dest-tag">Akomodasi</span>
-                    <span class="dest-cta">Sejarah Teluk Pahawang <span aria-hidden="true">&rarr;</span></span>
+                    <span class="dest-cta">Sejarah Pantai Mutun <span aria-hidden="true">&rarr;</span></span>
                 </button>
                 <div class="dest-body">
                     <p class="dest-loc">Pesawaran, Lampung</p>
                     <h3>Pantai Mutun</h3>
                     <p>Pantai Mutun (dikenal juga dengan MS Town Beach) di Kabupaten Pesawaran, Lampung, memiliki berbagai daya tarik keindahan alam dan aktivitas wisata yang cocok untuk keluarga.</p>
-                    <a class="text-link" href="#telukPahawangModal" data-teluk-open aria-haspopup="dialog" aria-controls="telukPahawangModal">Baca sejarah <span aria-hidden="true">&rarr;</span></a>
+                    <a class="text-link" href="#mutunModal" data-modal-open="mutunModal" aria-haspopup="dialog" aria-controls="mutunModal">Baca sejarah <span aria-hidden="true">&rarr;</span></a>
                 </div>
             </article>
 
             <article class="dest-card reveal" data-category="akomodasi">
-                <div class="dest-media">
-                    <img src="img/re.jpg" alt="Pondok kayu di atas laut Teluk Pahawang" loading="lazy" decoding="async">
+                <button class="dest-media dest-media--button" type="button" data-modal-open="batuModal" aria-haspopup="dialog" aria-controls="batuModal" aria-label="Buka sejarah Teluk Pahawang">
+                    <img src="img/re.jpg" alt="Pondok bambu di atas laut Teluk Pahawang" loading="lazy" decoding="async">
                     <span class="dest-tag">Akomodasi</span>
-                </div>
+                    <span class="dest-cta">Sejarah Air Terjun Batu Putu <span aria-hidden="true">&rarr;</span></span>
+                </button>
                 <div class="dest-body">
                     <p class="dest-loc">Pesawaran, Lampung</p>
-                    <h3>Air terjun batu putu</h3>
-                    <p>Air terjun yang terletak .</p>
+                    <h3>air terjun batu putu </h3>
+                    <p>Air terjun batu putu terletak di Kabupaten Pesawaran, Lampung, dan memiliki pemandangan yang indah.</p>
+                    <a class="text-link" href="#batuModal" data-modal-open="batuModal" aria-haspopup="dialog" aria-controls="batuModal">Baca sejarah <span aria-hidden="true">&rarr;</span></a>
                 </div>
             </article>
 
             <article class="dest-card reveal" data-category="akomodasi">
-                <div class="dest-media">
-                    <img src="img/uu.jpg" alt="Pondok kayu di atas laut Teluk Pahawang" loading="lazy" decoding="async">
+                <button class="dest-media dest-media--button" type="button" data-modal-open="pesagiModal" aria-haspopup="dialog" aria-controls="pesagiModal" aria-label="Buka sejarah Gunung Pesagi">
+                    <img src="img/uu.jpg" alt="Pondok bambu di atas laut Teluk Pahawang" loading="lazy" decoding="async">
                     <span class="dest-tag">Akomodasi</span>
-                </div>
+                    <span class="dest-cta">Sejarah Gunung Pesagi <span aria-hidden="true">&rarr;</span></span>
+                </button>
                 <div class="dest-body">
                     <p class="dest-loc">Pesawaran, Lampung</p>
-                    <h3>Gunung pesagi</h3>
-                    <p>Gunug pesagi Memiliki pemandagn yang sangt spetakuler dan memiliki hawa dingin.</p>
+                    <h3>gunung pesagi </h3>
+                    <p>Gunung Pesagi memiliki pemandangan yang sangat spektakuler dan memiliki hawa dingin.</p>
+                    <a class="text-link" href="#pesagiModal" data-modal-open="pesagiModal" aria-haspopup="dialog" aria-controls="pesagiModal">Baca sejarah <span aria-hidden="true">&rarr;</span></a>
+                </div>
             </article>
 
             <article class="dest-card reveal" data-category="akomodasi">
-                <div class="dest-media">
-                    <img src="img/r.jpg" alt="Pondok kayu di atas laut Teluk Pahawang" loading="lazy" decoding="async">
+                <button class="dest-media dest-media--button" type="button" data-modal-open="lengkungModal" aria-haspopup="dialog" aria-controls="lengkunModal" aria-label="Buka sejarah Lengkun Langit">
+                    <img src="img/r.jpg" alt="Pondok bambu di atas laut Teluk Pahawang" loading="lazy" decoding="async">
                     <span class="dest-tag">Akomodasi</span>
-                </div>
+                    <span class="dest-cta">Sejarah Lengkun Langit <span aria-hidden="true">&rarr;</span></span>
+                </button>
                 <div class="dest-body">
-                    <p class="dest-loc">Kemiling, Lampung</p>
-                    <h3>Lengkung Langit 2</h3>
-                    <p>Lengkung Langit 2 terkenal dengan jembatan kaca, spot foto kreatif, dan pemandangan bukit yang asri.</p>
+                    <p class="dest-loc">Pesawaran, Lampung</p>
+                    <h3>lengkung langit 2 </h3>
+                    <p>Lengkung Langit 2 memiliki pemandangan yang sangat spektakuler dan memiliki hawa dingin.</p>
+                    <a class="text-link" href="#lengkungModal" data-modal-open="lengkungModal" aria-haspopup="dialog" aria-controls="lengkunModal">Baca sejarah <span aria-hidden="true">&rarr;</span></a>
+                </div>
             </article>
 
             <article class="dest-card reveal" data-category="akomodasi">
-                <div class="dest-media">
-                    <img src="img/766.jpg" alt="Pondok kayu di atas laut Teluk Pahawang" loading="lazy" decoding="async">
+                <button class="dest-media dest-media--button" type="button" data-modal-open="tanahModal" aria-haspopup="dialog" aria-controls="tanahModal" aria-label="Buka sejarah Tanah Longsor">
+                    <img src="img/766.jpg" alt="Pondok bambu di atas laut Teluk Pahawang" loading="lazy" decoding="async">
                     <span class="dest-tag">Akomodasi</span>
-                </div>
+                    <span class="dest-cta">Sejarah Tanah Longsor <span aria-hidden="true">&rarr;</span></span>
+                </button>
                 <div class="dest-body">
-                    <p class="dest-loc">Kemiling, Lampung</p>
-                    <h3>Air terjun tanah longsor</h3>
-                    <p>Saya pernh jatuh di tempat wisata ini</p>
+                    <p class="dest-loc">Pesawaran, Lampung</p>
+                    <h3>Tanah Longsor</h3>
+                    <p>Tanah Longsor memiliki sejarah yang menarik dan pemandangan yang indah.</p>
+                    <a class="text-link" href="#tanahModal" data-modal-open="tanahModal" aria-haspopup="dialog" aria-controls="tanahModal">Baca sejarah <span aria-hidden="true">&rarr;</span></a>
+                </div>
             </article>
         </div>
     </section>
@@ -472,31 +483,45 @@
             <p class="section-sub">Sedikit cuplikan dari lanskap, laut, dan budaya yang menanti di Lampung.</p>
         </header>
 
-        <div class="gallery-grid">
-            <figure class="gallery-item reveal">
-                <img src="img/dest-menara.jpg" alt="Menara Siger, ikon Provinsi Lampung" loading="lazy" decoding="async">
-                <figcaption>Menara Siger</figcaption>
-            </figure>
-            <figure class="gallery-item reveal">
-                <img src="img/dest-pahawang.jpg" alt="Laut toska Pulau Pahawang" loading="lazy" decoding="async">
-                <figcaption>Pulau Pahawang</figcaption>
-            </figure>
-            <figure class="gallery-item reveal">
-                <img src="img/dest-pantai.jpg" alt="Pantai pasir putih di Lampung" loading="lazy" decoding="async">
-                <figcaption>Pantai Pasir Putih</figcaption>
-            </figure>
-            <figure class="gallery-item reveal">
-                <img src="img/dest-resort.jpg" alt="Pondok kayu di atas laut Teluk Pahawang" loading="lazy" decoding="async">
-                <figcaption>Teluk Pahawang</figcaption>
-            </figure>
-            <figure class="gallery-item reveal">
-                <img src="img/dest-resort.jpg" alt="Pondok kayu di atas laut Teluk Pahawang" loading="lazy" decoding="async">
-                <figcaption>Teluk Pahawang</figcaption>
-            </figure>
-            <figure class="gallery-item reveal">
-                <img src="img/dest-resort.jpg" alt="Pondok kayu di atas laut Teluk Pahawang" loading="lazy" decoding="async">
-                <figcaption>Teluk Pahawang</figcaption>
-            </figure>
+        <div class="gallery-shell">
+            <button class="gallery-nav gallery-nav--prev" id="galleryPrev" type="button" aria-label="Gambar sebelumnya" disabled>&larr;</button>
+
+            <div class="gallery-grid" id="galleryTrack" tabindex="0" aria-label="Galeri potret pesona Lampung">
+                <figure class="gallery-item reveal">
+                    <img src="img/dest-menara.jpg" alt="Menara Siger, ikon Provinsi Lampung" loading="lazy" decoding="async">
+                    <figcaption>Menara Siger</figcaption>
+                </figure>
+                <figure class="gallery-item reveal">
+                    <img src="img/dest-pahawang.jpg" alt="Laut toska Pulau Pahawang" loading="lazy" decoding="async">
+                    <figcaption>Pulau Pahawang</figcaption>
+                </figure>
+                <figure class="gallery-item reveal">
+                    <img src="img/pahawang.jpg" alt="Pantai pasir putih di Lampung" loading="lazy" decoding="async">
+                    <figcaption>Teluk Pahawang</figcaption>
+                </figure>
+                <figure class="gallery-item reveal">
+                    <img src="img/mutun.jpg" alt="Pondok kayu di atas laut Teluk Pahawang" loading="lazy" decoding="async">
+                    <figcaption>Pantai Mutn</figcaption>
+                </figure>
+                <figure class="gallery-item reveal">
+                    <img src="img/re.jpg" alt="Pondok kayu di atas laut Teluk Pahawang" loading="lazy" decoding="async">
+                    <figcaption>Air terjun batu putut</figcaption>
+                </figure>
+                <figure class="gallery-item reveal">
+                    <img src="img/uu.jpg" alt="Pondok kayu di atas laut Teluk Pahawang" loading="lazy" decoding="async">
+                    <figcaption>Gunung Pesagi</figcaption>
+                </figure>
+                <figure class="gallery-item reveal">
+                    <img src="img/r.jpg" alt="Pondok kayu di atas laut Teluk Pahawang" loading="lazy" decoding="async">
+                    <figcaption>Lengkung Langit2</figcaption>
+                </figure>
+                <figure class="gallery-item reveal">
+                    <img src="img/766.jpg" alt="Pondok kayu di atas laut Teluk Pahawang" loading="lazy" decoding="async">
+                    <figcaption>Air Terjun Tanah Longsor</figcaption>
+                </figure>
+            </div>
+
+            <button class="gallery-nav gallery-nav--next" id="galleryNext" type="button" aria-label="Gambar berikutnya">&rarr;</button>
         </div>
     </section>
 
@@ -560,10 +585,10 @@
 
 <!-- ===== INI MENARA SIGER HEHEHE ===== -->
 <div class="siger-modal" id="sigerModal" hidden>
-    <div class="siger-modal__scrim" data-siger-close></div>
+    <div class="siger-modal__scrim" data-modal-close></div>
 
     <div class="siger-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="sigerTitle" aria-describedby="sigerLead">
-        <button class="siger-modal__close" type="button" data-siger-close aria-label="Tutup sejarah Menara Siger">&times;</button>
+        <button class="siger-modal__close" type="button" data-modal-close aria-label="Tutup sejarah Menara Siger">&times;</button>
 
         <figure class="siger-modal__media">
             <img src="img/dest-menara.jpg" alt="Menara Siger berwarna kuning keemasan di atas Bukit Gamping, Bakauheni" loading="lazy" decoding="async">
@@ -619,7 +644,7 @@
 
             <div class="siger-modal__actions">
                 <a class="btn-primary" href="https://maps.google.com/?q=Menara+Siger+Bakauheni" target="_blank" rel="noopener">Lihat lokasi <span aria-hidden="true">&rarr;</span></a>
-                <button class="siger-modal__done" type="button" data-siger-close>Tutup</button>
+                <button class="siger-modal__done" type="button" data-modal-close>Tutup</button>
             </div>
         </div>
     </div>
@@ -627,10 +652,10 @@
 
 <!-- ===== MODAL SEJARAH PULAU PAHAWANG ===== -->
 <div class="siger-modal" id="pahawangModal" hidden>
-    <div class="siger-modal__scrim" data-pahawang-close></div>
+    <div class="siger-modal__scrim" data-modal-close></div>
 
     <div class="siger-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="pahawangTitle" aria-describedby="pahawangLead">
-        <button class="siger-modal__close" type="button" data-pahawang-close aria-label="Tutup sejarah Pulau Pahawang">&times;</button>
+        <button class="siger-modal__close" type="button" data-modal-close aria-label="Tutup sejarah Pulau Pahawang">&times;</button>
 
         <figure class="siger-modal__media">
             <img src="img/dest-pahawang.jpg" alt="Laut biru jernih di Pulau Pahawang, Lampung" loading="lazy" decoding="async">
@@ -686,18 +711,18 @@
 
             <div class="siger-modal__actions">
                 <a class="btn-primary" href="https://maps.google.com/?q=Pulau+Pahawang+Pesawaran" target="_blank" rel="noopener">Lihat lokasi <span aria-hidden="true">&rarr;</span></a>
-                <button class="siger-modal__done" type="button" data-pahawang-close>Tutup</button>
+                <button class="siger-modal__done" type="button" data-modal-close>Tutup</button>
             </div>
         </div>
     </div>
 </div>
 
 <!-- ===== MODAL SEJARAH TELUK PAHAWANG ===== -->
-<div class="siger-modal" id="mutungModal" hidden>
-    <div class="siger-modal__scrim" data-teluk-close></div>
+<div class="siger-modal" id="telukModal" hidden>
+    <div class="siger-modal__scrim" data-modal-close></div>
 
     <div class="siger-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="telukTitle" aria-describedby="telukLead">
-        <button class="siger-modal__close" type="button" data-teluk-close aria-label="Tutup sejarah Teluk Pahawang">&times;</button>
+        <button class="siger-modal__close" type="button" data-modal-close aria-label="Tutup sejarah Teluk Pahawang">&times;</button>
 
         <figure class="siger-modal__media">
             <img src="img/pahawang.jpg" alt="Pondok bambu di atas laut Teluk Pahawang saat malam" loading="lazy" decoding="async">
@@ -752,18 +777,18 @@
 
             <div class="siger-modal__actions">
                 <a class="btn-primary" href="https://maps.google.com/?q=Teluk+Pahawang+Pesawaran" target="_blank" rel="noopener">Lihat lokasi <span aria-hidden="true">&rarr;</span></a>
-                <button class="siger-modal__done" type="button" data-teluk-close>Tutup</button>
+                <button class="siger-modal__done" type="button" data-modal-close>Tutup</button>
             </div>
         </div>
     </div>
 </div>
 
 <!-- ===== MODAL SEJARAH  muutn===== -->
-<div class="siger-modal" id="telukPahawangModal" hidden>
-    <div class="siger-modal__scrim" data-teluk-close></div>
+<div class="siger-modal" id="mutunModal" hidden>
+    <div class="siger-modal__scrim" data-modal-close></div>
 
     <div class="siger-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="telukTitle" aria-describedby="telukLead">
-        <button class="siger-modal__close" type="button" data-teluk-close aria-label="Tutup sejarah Teluk Pahawang">&times;</button>
+        <button class="siger-modal__close" type="button" data-modal-close aria-label="Tutup sejarah Teluk Pahawang">&times;</button>
 
         <figure class="siger-modal__media">
             <img src="img/mutun.jpg" alt="Pondok bambu di atas laut Teluk Pahawang saat malam" loading="lazy" decoding="async">
@@ -818,7 +843,7 @@
 
             <div class="siger-modal__actions">
                 <a class="btn-primary" href="https://www.google.com/maps/place/Pantai+Mutun/@-5.5146607,105.2525691,15z/data=!3m1!4b1!4m6!3m5!1s0x2e40d863ce0b6695:0xaff8f326c3a8d9e1!8m2!3d-5.5143696!4d105.2633118!16s%2Fg%2F11b7q6zls0?entry=ttu&g_ep=EgoyMDI2MTEwOC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener">Lihat lokasi <span aria-hidden="true">&rarr;</span></a>
-                <button class="siger-modal__done" type="button" data-teluk-close>Tutup</button>
+                <button class="siger-modal__done" type="button" data-modal-close>Tutup</button>
             </div>
         </div>
     </div>
@@ -826,47 +851,47 @@
 
 
 <!-- ===== MODAL SEJARAH TELUK PAHAWANG ===== -->
-<div class="siger-modal" id="mutungModal" hidden>
-    <div class="siger-modal__scrim" data-teluk-close></div>
+<div class="siger-modal" id="batuModal" hidden>
+    <div class="siger-modal__scrim" data-modal-close></div>
 
     <div class="siger-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="telukTitle" aria-describedby="telukLead">
-        <button class="siger-modal__close" type="button" data-teluk-close aria-label="Tutup sejarah Teluk Pahawang">&times;</button>
+        <button class="siger-modal__close" type="button" data-modal-close aria-label="Tutup sejarah Teluk Pahawang">&times;</button>
 
         <figure class="siger-modal__media">
-            <img src="img/pahawang.jpg" alt="Pondok bambu di atas laut Teluk Pahawang saat malam" loading="lazy" decoding="async">
+            <img src="img/re.jpg" alt="Pondok bambu di atas laut Teluk Pahawang saat malam" loading="lazy" decoding="async">
             <figcaption class="siger-modal__caption">
                 <span class="siger-modal__tag">Akomodasi Bahari</span>
-                <strong>Teluk Pahawang</strong>
-                <span>Pesawaran, Lampung</span>
+                <strong>Air Terjun Batu Putu</strong>
+                <span>Bandar Lampung, Provinsi Lampung.</span>
             </figcaption>
         </figure>
 
         <div class="siger-modal__content">
             <p class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span>Sejarah &amp; Pesona</p>
-            <h2 id="telukTitle">Teluk Pahawang</h2>
-            <p class="siger-modal__lead" id="telukLead">Kawasan penginapan di Teluk Pahawang yang terkenal dengan pondok bambu di atas air. Cocok untuk menikmati suasana laut yang tenang, sunset, dan malam yang jauh dari keramaian.</p>
+            <h2 id="telukTitle">Air Terjun Batu Putu</h2>
+            <p class="siger-modal__lead" id="telukLead">Air Terjun Batu Putu adalah objek wisata alam yang terletak di kawasan Bandar Lampung, Provinsi Lampung. Terletak di tengah hutan yang lebat, air terjun ini menawarkan pemandangan yang memukau dan suasana yang tenang.</p>
 
             <section class="siger-section">
                 <h3>Sejarah &amp; perkembangan</h3>
-                <p>Teluk Pahawang berada di kawasan Pulau Pahawang, Kabupaten Pesawaran. Awalnya kawasan ini hanya dilalui nelayan dan wisatawan yang datang untuk snorkeling pada siang hari.</p>
-                <p>Seiring meningkatnya kunjungan, warga setempat mulai membangun pondok-pondok bambu di atas air. Penginapan itu dikelola secara swadaya oleh keluarga lokal dan kini menjadi ciri khas Teluk Pahawang.</p>
+                <p>Menurut cerita yang dimuat dalam sumber wisata lokal, nama Batu Putu berasal dari sebuah batu di atas bukit yang bentuknya terlihat seperti terputus. Dalam bahasa Lampung, kata putuk berarti putus.</p>
+                <p>Air terjun ini memiliki ketinggian sekitar 20 meter berdasarkan penelitian yang diterbitkan dalam Jurnal Belantara tahun 2023. Lingkungannya masih memiliki pepohonan hijau dan suasana alam</p>
             </section>
 
             <section class="siger-section">
                 <h3>Pesona &amp; fasilitas</h3>
-                <p>Pondok bambu berdiri di atas dermaga kayu yang menghubungkan beberapa unit penginapan. Dari teras pondok, pengunjung bisa langsung melihat laut, hutan mangrove, dan langit senja.</p>
-                <p>Fasilitas umumnya meliputi kamar sederhana, teras, area makan, dermaga, dan akses langsung untuk snorkeling atau memancing.</p>
+                <p>Air Terjun Batu Putu memiliki pesona alam yang masih asri dengan air yang jernih dan menyegarkan. Dikelilingi pepohonan rindang dan perbukitan hijau, tempat ini menawarkan suasana sejuk dan tenang meskipun lokasinya tidak jauh dari pusat Kota Bandar Lampung.</p>
+                <p>yang membuatnya menarik untuk dikunjungi. Pengunjung dapat menikmati keindahan air terjun alami dengan aliran air yang segar serta pemandangan bebatuan alami di sekitarnya. Terdapat kolam alami yang dapat digunakan untuk berenang dan bermain air.</p>
             </section>
 
             <section class="siger-section">
                 <h3>Fakta singkat</h3>
                 <dl class="siger-facts">
-                    <div><dt>Lokasi</dt><dd>Teluk Pahawang, Pesawaran, Lampung</dd></div>
-                    <div><dt>Jenis</dt><dd>Pondok bambu/kayu di atas air</dd></div>
-                    <div><dt>Akses</dt><dd>Dermaga Ketapang, Padang Cermin</dd></div>
-                    <div><dt>Transportasi</dt><dd>Perahu motor sekitar 20&ndash;30 menit</dd></div>
-                    <div><dt>Fasilitas</dt><dd>Kamar, teras, dermaga, area makan</dd></div>
-                    <div><dt>Aktivitas</dt><dd>Snorkeling, sunset, memancing, bersantai</dd></div>
+                    <div><dt>Lokasi</dt><dd>Batu Putu, Bandar Lampung, Provinsi Lampung</dd></div>
+                    <div><dt>Jenis</dt><dd>Wisata alam berupa air terjun alami.</dd></div>
+                    <div><dt>Akses</dt><dd>Melalui kawasan Jalan Wan Abdul Rahman,</dd></div>
+                    <div><dt>Transportasi</dt><dd>Dapat menggunakan sepeda motor atau mobil pribadi.</dd></div>
+                    <div><dt>Fasilitas</dt><dd>Area parkir, toilet, tempat istirahat, dan warung</dd></div>
+                    <div><dt>Aktivitas</dt><dd>Bermain air, berenang, menikmati pemandangan alam, berfoto</dd></div>
                     <div><dt>Waktu terbaik</dt><dd>Pagi atau sore saat cuaca cerah</dd></div>
                     <div><dt>Cocok untuk</dt><dd>Pasangan, keluarga, dan grup kecil</dd></div>
                 </dl>
@@ -884,13 +909,210 @@
             </section>
 
             <div class="siger-modal__actions">
-                <a class="btn-primary" href="https://maps.google.com/?q=Teluk+Pahawang+Pesawaran" target="_blank" rel="noopener">Lihat lokasi <span aria-hidden="true">&rarr;</span></a>
-                <button class="siger-modal__done" type="button" data-teluk-close>Tutup</button>
+                <a class="btn-primary" href="https://maps.app.goo.gl/8UPfc66YgMcoVpvH6" target="_blank" rel="noopener">Lihat lokasi <span aria-hidden="true">&rarr;</span></a>
+                <button class="siger-modal__done" type="button" data-modal-close>Tutup</button>
             </div>
         </div>
     </div>
 </div>
 
+<!-- ===== MODAL SEJARAH TELUK PAHAWANG ===== -->
+<div class="siger-modal" id="pesagiModal" hidden>
+    <div class="siger-modal__scrim" data-modal-close></div>
+
+    <div class="siger-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="telukTitle" aria-describedby="telukLead">
+        <button class="siger-modal__close" type="button" data-modal-close aria-label="Tutup sejarah Teluk Pahawang">&times;</button>
+
+        <figure class="siger-modal__media">
+            <img src="img/uu.jpg" alt="Pondok bambu di atas laut Teluk Pahawang saat malam" loading="lazy" decoding="async">
+            <figcaption class="siger-modal__caption">
+                <span class="siger-modal__tag">Akomodasi Bahari</span>
+                <strong>Gunung Pesagi</strong>
+                <span>Gunung Pesagi terletak di Kabupaten Lampung Barat.</span>
+            </figcaption>
+        </figure>
+
+        <div class="siger-modal__content">
+            <p class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span>Sejarah &amp; Pesona</p>
+            <h2 id="telukTitle">Gunung Pesagi</h2>
+            <p class="siger-modal__lead" id="telukLead">Gunung Pesagi adalah objek wisata alam yang terletak di kawasan Kabupaten Lampung Barat, Provinsi Lampung. Terletak di tengah hutan yang lebat, gunung ini menawarkan pemandangan yang memukau dan suasana yang tenang.</p>
+
+            <section class="siger-section">
+                <h3>Sejarah &amp; perkembangan</h3>
+                <p>Gunung Pesagi memiliki nilai sejarah dan budaya yang sangat penting bagi masyarakat Lampung. Gunung ini dipercaya sebagai tempat asal-usul nenek moyang masyarakat Lampung,.</p>
+                <p>khususnya yang berkaitan dengan kawasan Sekala Brak di Lampung Barat. Menurut cerita turun-temurun, kawasan di sekitar Gunung Pesagi menjadi tempat awal berkembangnya peradaban masyarakat Lampung.</p>
+            </section>
+
+            <section class="siger-section">
+                <h3>Pesona &amp; fasilitas</h3>
+                <p>Gunung Pesagi memiliki pesona alam yang sangat indah dengan panorama pegunungan yang memukau dan udara sejuk khas dataran tinggi.</p>
+                <p>Kawasan gunung ini dikelilingi hutan yang masih asri serta berbagai jenis tumbuhan alami. Dari puncaknya, pengunjung dapat menikmati pemandangan perbukitan, hamparan alam Lampung Barat,</p>
+            </section>
+
+            <section class="siger-section">
+                <h3>Fakta singkat</h3>
+                <dl class="siger-facts">
+                    <div><dt>Lokasi</dt><dd>Gunung Pesagi, Kabupaten Lampung Barat, Provinsi Lampung</dd></div>
+                    <div><dt>Jenis</dt><dd>Wisata alam berupa gunung.</dd></div>
+                    <div><dt>Akses</dt><dd>Melalui kawasan Jalan Wan Abdul Rahman,</dd></div>
+                    <div><dt>Transportasi</dt><dd>Dapat menggunakan sepeda motor atau mobil pribadi.</dd></div>
+                    <div><dt>Fasilitas</dt><dd>Area parkir, toilet, tempat istirahat, dan warung</dd></div>
+                    <div><dt>Aktivitas</dt><dd>Mendaki, menikmati pemandangan alam, berfoto</dd></div>
+                    <div><dt>Waktu terbaik</dt><dd>Pagi atau sore saat cuaca cerah</dd></div>
+                    <div><dt>Cocok untuk</dt><dd>Pasangan, keluarga, dan grup kecil</dd></div>
+                </dl>
+            </section>
+
+            <section class="siger-section">
+                <h3>Tambahan: tips menginap</h3>
+                <ul class="siger-tips">
+                    <li>Pesan pondok lebih awal, terutama saat akhir pekan dan musim liburan.</li>
+                    <li>Bawa uang tunai, power bank, dan perlengkapan pribadi karena fasilitas bisa terbatas.</li>
+                    <li>Sinyal telepon dan listrik di atas air kadang tidak stabil.</li>
+                    <li>Jaga kebersihan dan jangan membuang sampah ke laut.</li>
+                    <li>Ikuti arahan pengelola soal keamanan saat snorkeling atau beraktivitas di air.</li>
+                </ul>
+            </section>
+
+            <div class="siger-modal__actions">
+                <a class="btn-primary" href="https://maps.app.goo.gl/ZmHrYpiYHUFnFpTX8" target="_blank" rel="noopener">Lihat lokasi <span aria-hidden="true">&rarr;</span></a>
+                <button class="siger-modal__done" type="button" data-modal-close>Tutup</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ===== MODAL SEJARAH TELUK PAHAWANG ===== -->
+<div class="siger-modal" id="lengkungModal" hidden>
+    <div class="siger-modal__scrim" data-modal-close></div>
+
+    <div class="siger-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="telukTitle" aria-describedby="telukLead">
+        <button class="siger-modal__close" type="button" data-modal-close aria-label="Tutup sejarah Teluk Pahawang">&times;</button>
+
+        <figure class="siger-modal__media">
+            <img src="img/r.jpg" alt="Pondok bambu di atas laut Teluk Pahawang saat malam" loading="lazy" decoding="async">
+            <figcaption class="siger-modal__caption">
+                <span class="siger-modal__tag">Akomodasi Bahari</span>
+                <strong>Lengkung Langit2</strong>
+                <span>Lengkung Langit 2 LengkungModal.</span>
+            </figcaption>
+        </figure>
+
+        <div class="siger-modal__content">
+            <p class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span>Sejarah &amp; Pesona</p>
+            <h2 id="telukTitle">Lengkung Langit</h2>
+            <p class="siger-modal__lead" id="telukLead">Lengkung Langit adalah objek wisata alam yang terletak di kawasan Kabupaten Lampung Barat, Provinsi Lampung. Terletak di tengah hutan yang lebat, gunung ini menawarkan pemandangan yang memukau dan suasana yang tenang.</p>
+
+            <section class="siger-section">
+                <h3>Sejarah &amp; perkembangan</h3>
+                <p>Lengkung Langit memiliki nilai sejarah dan budaya yang sangat penting bagi masyarakat Lampung. Gunung ini dipercaya sebagai tempat asal-usul nenek moyang masyarakat Lampung,.</p>
+                <p>khususnya yang berkaitan dengan kawasan Sekala Brak di Lampung Barat. Menurut cerita turun-temurun, kawasan di sekitar Gunung Pesagi menjadi tempat awal berkembangnya peradaban masyarakat Lampung.</p>
+            </section>
+
+            <section class="siger-section">
+                <h3>Pesona &amp; fasilitas</h3>
+                <p>Lengkung Langit 2 memiliki pesona wisata yang menarik dengan pemandangan alam perbukitan dan panorama Kota Bandar Lampung dari ketinggian</p>
+                <p>Pengunjung dapat menikmati keindahan Teluk Lampung, suasana pepohonan yang hijau, serta udara yang sejuk.</p>
+            </section>
+
+            <section class="siger-section">
+                <h3>Fakta singkat</h3>
+                <dl class="siger-facts">
+                    <div><dt>Lokasi</dt><dd>Lengkung Langit 2, Kelurahan Sumber Agung, Kecamatan Kemiling, Kota Bandar Lampung</dd></div>
+                    <div><dt>Jenis</dt><dd>Wisata alam dan rekreasi perbukitan dengan panorama Kota Bandar Lampung..</dd></div>
+                    <div><dt>Akses</dt><dd>Melalui kawasan Jalan Wan Abdul Rahman, Kecamatan Kemiling.,</dd></div>
+                    <div><dt>Transportasi</dt><dd>Dapat menggunakan sepeda motor atau mobil pribadi.</dd></div>
+                    <div><dt>Fasilitas</dt><dd>Area parkir, toilet, tempat istirahat, dan warung</dd></div>
+                    <div><dt>Aktivitas</dt><dd>Mendaki, menikmati pemandangan alam, berfoto</dd></div>
+                    <div><dt>Waktu terbaik</dt><dd>Pagi atau sore saat cuaca cerah</dd></div>
+                    <div><dt>Cocok untuk</dt><dd>Pasangan, keluarga, dan grup kecil</dd></div>
+                </dl>
+            </section>
+
+            <section class="siger-section">
+                <h3>Tambahan: tips menginap</h3>
+                <ul class="siger-tips">
+                    <li>Pesan pondok lebih awal, terutama saat akhir pekan dan musim liburan.</li>
+                    <li>Bawa uang tunai, power bank, dan perlengkapan pribadi karena fasilitas bisa terbatas.</li>
+                    <li>Sinyal telepon dan listrik di atas air kadang tidak stabil.</li>
+                    <li>Jaga kebersihan dan jangan membuang sampah ke laut.</li>
+                    <li>Ikuti arahan pengelola soal keamanan saat snorkeling atau beraktivitas di air.</li>
+                </ul>
+            </section>
+
+            <div class="siger-modal__actions">
+                <a class="btn-primary" href="https://maps.app.goo.gl/zUzmsfYXZ7BaiFJs9" target="_blank" rel="noopener">Lihat lokasi <span aria-hidden="true">&rarr;</span></a>
+                <button class="siger-modal__done" type="button" data-modal-close>Tutup</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ===== MODAL SEJARAH TELUK PAHAWANG ===== -->
+<div class="siger-modal" id="tanahModal" hidden>
+    <div class="siger-modal__scrim" data-modal-close></div>
+
+    <div class="siger-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="telukTitle" aria-describedby="telukLead">
+        <button class="siger-modal__close" type="button" data-modal-close aria-label="Tutup sejarah Teluk Pahawang">&times;</button>
+
+        <figure class="siger-modal__media">
+            <img src="img/766.jpg" alt="Pondok bambu di atas laut Teluk Pahawang saat malam" loading="lazy" decoding="async">
+            <figcaption class="siger-modal__caption">
+                <span class="siger-modal__tag">Akomodasi Bahari</span>
+                <strong>Tanah Longsor</strong>
+                <span>Tanah Longsor 2 TanahModal.</span>
+            </figcaption>
+        </figure>
+
+        <div class="siger-modal__content">
+            <p class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span>Sejarah &amp; Pesona</p>
+            <h2 id="telukTitle">Tanah Longsor</h2>
+            <p class="siger-modal__lead" id="telukLead">Tanah Longsor adalah objek wisata alam yang terletak di kawasan Kabupaten Lampung Barat, Provinsi Lampung. Terletak di tengah hutan yang lebat, gunung ini menawarkan pemandangan yang memukau dan suasana yang tenang.</p>
+
+            <section class="siger-section">
+                <h3>Sejarah &amp; perkembangan</h3>
+                <p>Tanah longsor merupakan bencana alam yang sudah beberapa kali terjadi di wilayah Provinsi Lampung.</p>
+                <p>Kondisi geografis Lampung yang memiliki perbukitan, lereng curam, dan curah hujan tinggi menyebabkan beberapa daerah rentan mengalami longsor.</p>
+            </section>
+
+            <section class="siger-section">
+                <h3>Pesona &amp; fasilitas</h3>
+                <p>Kawasan tanah longsor memiliki bentang alam yang terbentuk dari perubahan kondisi permukaan tanah dan lereng.</p>
+                <p>Beberapa kawasan bekas longsor dapat memperlihatkan tebing alami, lapisan tanah, serta pemandangan perbukitan di sekitarnya..</p>
+            </section>
+
+            <section class="siger-section">
+                <h3>Fakta singkat</h3>
+                <dl class="siger-facts">
+                    <div><dt>Lokasi</dt><dd>Air Terjun Tanah Longsor, Kelurahan Sumber Agung,</dd></div>
+                    <div><dt>Jenis</dt><dd>Wisata alam berupa air terjun alami yang dikelilingi kawasan perbukitan dan pepohonan hijau..</dd></div>
+                    <div><dt>Akses</dt><dd>Melalui kawasan Jalan Wan Abdul Rahman, Kecamatan Kemiling.</dd></div>
+                    <div><dt>Transportasi</dt><dd>Dapat menggunakan sepeda motor atau mobil pribadi.</dd></div>
+                    <div><dt>Fasilitas</dt><dd>Area parkir, toilet, tempat istirahat, dan warung</dd></div>
+                    <div><dt>Aktivitas</dt><dd>Mendaki, menikmati pemandangan alam, berfoto</dd></div>
+                    <div><dt>Waktu terbaik</dt><dd>Pagi atau sore saat cuaca cerah</dd></div>
+                    <div><dt>Cocok untuk</dt><dd>Pasangan, keluarga, dan grup kecil</dd></div>
+                </dl>
+            </section>
+
+            <section class="siger-section">
+                <h3>Tambahan: tips menginap</h3>
+                <ul class="siger-tips">
+                    <li>Pesan pondok lebih awal, terutama saat akhir pekan dan musim liburan.</li>
+                    <li>Bawa uang tunai, power bank, dan perlengkapan pribadi karena fasilitas bisa terbatas.</li>
+                    <li>Sinyal telepon dan listrik di atas air kadang tidak stabil.</li>
+                    <li>Jaga kebersihan dan jangan membuang sampah ke laut.</li>
+                    <li>Ikuti arahan pengelola soal keamanan saat snorkeling atau beraktivitas di air.</li>
+                </ul>
+            </section>
+
+            <div class="siger-modal__actions">
+                <a class="btn-primary" href="https://maps.app.goo.gl/bEds8zFdTKAt5MZB7" target="_blank" rel="noopener">Lihat lokasi <span aria-hidden="true">&rarr;</span></a>
+                <button class="siger-modal__done" type="button" data-modal-close>Tutup</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 <script src="script.js"></script>
 </body>

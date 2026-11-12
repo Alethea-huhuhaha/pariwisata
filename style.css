@@ -991,15 +991,33 @@ figure { margin: 0; }
     background: var(--cream-2);
 }
 
+.gallery-shell {
+    position: relative;
+}
+
 .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    display: flex;
     gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding: 4px 0;
+}
+
+.gallery-grid::-webkit-scrollbar { display: none; }
+
+.gallery-grid:focus-visible {
+    outline: 2px solid var(--gold-deep);
+    outline-offset: 6px;
 }
 
 .gallery-item {
     position: relative;
-    height: 340px;
+    flex: 0 0 clamp(240px, 26vw, 330px);
+    height: 400px;
+    scroll-snap-align: start;
     border-radius: 16px;
     overflow: hidden;
     background: var(--ink-2);
@@ -1036,6 +1054,40 @@ figure { margin: 0; }
     color: var(--white);
     letter-spacing: .01em;
 }
+
+.gallery-nav {
+    position: absolute;
+    top: 50%;
+    z-index: 3;
+    display: grid;
+    place-items: center;
+    width: 46px;
+    height: 46px;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .92);
+    color: var(--ink);
+    font-size: 18px;
+    line-height: 1;
+    box-shadow: 0 10px 24px rgba(6, 22, 28, .22);
+    cursor: pointer;
+    transform: translateY(-50%);
+    transition: background .25s var(--ease), opacity .25s var(--ease), transform .25s var(--ease);
+}
+
+.gallery-nav:hover {
+    background: var(--white);
+    transform: translateY(-50%) scale(1.06);
+}
+
+.gallery-nav:disabled {
+    opacity: .35;
+    cursor: default;
+    transform: translateY(-50%);
+}
+
+.gallery-nav--prev { left: -10px; }
+.gallery-nav--next { right: -10px; }
 
 /* ===== KONTAK ===== */
 .contact {
@@ -1203,9 +1255,7 @@ html.js .dest-grid .reveal:nth-child(4) { transition-delay: .24s; }
 
     .dest-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 
-    .gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-
-    .gallery-item { height: 280px; }
+    .gallery-item { flex-basis: 260px; height: 280px; }
 }
 
 @media (max-width: 1000px) {
@@ -1353,9 +1403,9 @@ html.js .dest-grid .reveal:nth-child(4) { transition-delay: .24s; }
 
     .spotlight-meta { margin-top: 14px; }
 
-    .gallery-grid { grid-template-columns: 1fr; }
+    .gallery-item { flex-basis: 220px; height: 250px; }
 
-    .gallery-item { height: 250px; }
+    .gallery-nav { width: 38px; height: 38px; }
 
     .about-features { grid-template-columns: 1fr; gap: 16px; }
 

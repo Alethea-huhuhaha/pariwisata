@@ -226,6 +226,64 @@
         });
     })();
 
+    /* ================= GALERI HORIZONTAL ================= */
+    (function initGallery() {
+        const track = document.getElementById('galleryTrack');
+        const prevBtn = document.getElementById('galleryPrev');
+        const nextBtn = document.getElementById('galleryNext');
+        if (!track) return;
+
+        const items = Array.prototype.slice.call(track.children);
+        if (items.length === 0) return;
+
+        function step() {
+            if (items.length > 1) {
+                return items[1].offsetLeft - items[0].offsetLeft;
+            }
+            return items[0].offsetWidth || track.clientWidth;
+        }
+
+        function updateButtons() {
+            const maxScroll = track.scrollWidth - track.clientWidth - 2;
+            if (prevBtn) prevBtn.disabled = track.scrollLeft <= 2;
+            if (nextBtn) nextBtn.disabled = track.scrollLeft >= maxScroll;
+        }
+
+        function goTo(direction) {
+            track.scrollBy({
+                left: direction * step(),
+                behavior: reduceMotion ? 'auto' : 'smooth'
+            });
+        }
+
+        if (prevBtn) prevBtn.addEventListener('click', function () { goTo(-1); });
+        if (nextBtn) nextBtn.addEventListener('click', function () { goTo(1); });
+
+        track.addEventListener('keydown', function (event) {
+            if (event.key === 'ArrowRight') {
+                event.preventDefault();
+                goTo(1);
+            } else if (event.key === 'ArrowLeft') {
+                event.preventDefault();
+                goTo(-1);
+            }
+        });
+
+        let ticking = false;
+        track.addEventListener('scroll', function () {
+            if (ticking) return;
+            ticking = true;
+            requestAnimationFrame(function () {
+                updateButtons();
+                ticking = false;
+            });
+        }, { passive: true });
+
+        window.addEventListener('resize', updateButtons);
+        window.addEventListener('load', updateButtons);
+        updateButtons();
+    })();
+
     /* ================= FILTER DESTINASI ================= */
     (function initFilters() {
         const buttons = Array.prototype.slice.call(document.querySelectorAll('.filter'));
@@ -336,304 +394,42 @@
     const yearEl = document.getElementById('year');
     if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
-    /* ================= MODAL SEJARAH MENARA SIGER ================= */
-    (function initSigerModal() {
-        const modal = document.getElementById('sigerModal');
-        if (!modal) return;
+/* ================= SEMUA MODAL ================= */
+(function initModals() {
+    let lastFocus = null;
 
-        const dialog = modal.querySelector('.siger-modal__dialog');
-        const openers = Array.prototype.slice.call(document.querySelectorAll('[data-siger-open]'));
-        const closers = Array.prototype.slice.call(modal.querySelectorAll('[data-siger-close]'));
-        let lastFocus = null;
+    function openModal(modal) {
+        lastFocus = document.activeElement;
+        modal.hidden = false;
+        modal.classList.add('is-open');
+        document.body.classList.add('modal-open');
+        const closeBtn = modal.querySelector('.siger-modal__close');
+        if (closeBtn) closeBtn.focus();
+    }
 
-        function focusableItems() {
-            if (!dialog) return [];
-            return Array.prototype.slice.call(
-                dialog.querySelectorAll('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])')
-            ).filter(function (el) { return el.offsetParent !== null; });
-        }
+    function closeModal(modal) {
+        if (modal.hidden) return;
+        modal.classList.remove('is-open');
+        modal.hidden = true;
+        document.body.classList.remove('modal-open');
+        if (lastFocus && lastFocus.focus) lastFocus.focus();
+    }
 
-        function openModal(event) {
-            if (event) event.preventDefault();
-            lastFocus = document.activeElement;
-
-            modal.hidden = false;
-            modal.classList.add('is-open');
-            document.body.classList.add('modal-open');
-
-            const closeBtn = modal.querySelector('.siger-modal__close');
-            if (closeBtn) closeBtn.focus();
-        }
-
-        function closeModal() {
-            if (modal.hidden) return;
-
-            modal.classList.remove('is-open');
-            modal.hidden = true;
-            document.body.classList.remove('modal-open');
-
-            if (lastFocus && typeof lastFocus.focus === 'function') {
-                lastFocus.focus();
-            }
-            lastFocus = null;
-        }
-
-        openers.forEach(function (el) {
-            el.addEventListener('click', openModal);
+    document.querySelectorAll('[data-modal-open]').forEach(function (el) {
+        el.addEventListener('click', function (e) {
+            e.preventDefault();
+            const modal = document.getElementById(el.dataset.modalOpen);
+            if (modal) openModal(modal);
         });
+    });
 
-        closers.forEach(function (el) {
-            el.addEventListener('click', closeModal);
+    document.querySelectorAll('.siger-modal').forEach(function (modal) {
+        modal.querySelectorAll('[data-modal-close]').forEach(function (el) {
+            el.addEventListener('click', function () { closeModal(modal); });
         });
-
-        modal.addEventListener('keydown', function (event) {
-            if (event.key === 'Escape') {
-                event.preventDefault();
-                closeModal();
-                return;
-            }
-
-            if (event.key !== 'Tab') return;
-
-            const items = focusableItems();
-            if (items.length === 0) return;
-
-            const first = items[0];
-            const last = items[items.length - 1];
-
-            if (event.shiftKey && document.activeElement === first) {
-                event.preventDefault();
-                last.focus();
-            } else if (!event.shiftKey && document.activeElement === last) {
-                event.preventDefault();
-                first.focus();
-            }
+        modal.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') closeModal(modal);
         });
-    })();
+    });
 })();
-
-/* ================= MODAL SEJARAH PULAU PAHAWANG ================= */
-    (function initPahawangModal() {
-        const modal = document.getElementById('pahawangModal');
-        if (!modal) return;
-
-        const dialog = modal.querySelector('.siger-modal__dialog');
-        const openers = Array.prototype.slice.call(document.querySelectorAll('[data-pahawang-open]'));
-        const closers = Array.prototype.slice.call(modal.querySelectorAll('[data-pahawang-close]'));
-        let lastFocus = null;
-
-        function focusableItems() {
-            if (!dialog) return [];
-            return Array.prototype.slice.call(
-                dialog.querySelectorAll('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])')
-            ).filter(function (el) { return el.offsetParent !== null; });
-        }
-
-        function openModal(event) {
-            if (event) event.preventDefault();
-            lastFocus = document.activeElement;
-
-            modal.hidden = false;
-            modal.classList.add('is-open');
-            document.body.classList.add('modal-open');
-
-            const closeBtn = modal.querySelector('.siger-modal__close');
-            if (closeBtn) closeBtn.focus();
-        }
-
-        function closeModal() {
-            if (modal.hidden) return;
-
-            modal.classList.remove('is-open');
-            modal.hidden = true;
-            document.body.classList.remove('modal-open');
-
-            if (lastFocus && typeof lastFocus.focus === 'function') {
-                lastFocus.focus();
-            }
-            lastFocus = null;
-        }
-
-        openers.forEach(function (el) {
-            el.addEventListener('click', openModal);
-        });
-
-        closers.forEach(function (el) {
-            el.addEventListener('click', closeModal);
-        });
-
-        modal.addEventListener('keydown', function (event) {
-            if (event.key === 'Escape') {
-                event.preventDefault();
-                closeModal();
-                return;
-            }
-
-            if (event.key !== 'Tab') return;
-
-            const items = focusableItems();
-            if (items.length === 0) return;
-
-            const first = items[0];
-            const last = items[items.length - 1];
-
-            if (event.shiftKey && document.activeElement === first) {
-                event.preventDefault();
-                last.focus();
-            } else if (!event.shiftKey && document.activeElement === last) {
-                event.preventDefault();
-                first.focus();
-            }
-        });
-    })();
-    
-
-      /* ================= MODAL SEJARAH TELUK PAHAWANG ================= */
-    (function initTelukPahawangModal() {
-        const modal = document.getElementById('telukPahawangModal');
-        if (!modal) return;
-
-        const dialog = modal.querySelector('.siger-modal__dialog');
-        const openers = Array.prototype.slice.call(document.querySelectorAll('[data-teluk-open]'));
-        const closers = Array.prototype.slice.call(modal.querySelectorAll('[data-teluk-close]'));
-        let lastFocus = null;
-
-        function focusableItems() {
-            if (!dialog) return [];
-            return Array.prototype.slice.call(
-                dialog.querySelectorAll('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])')
-            ).filter(function (el) { return el.offsetParent !== null; });
-        }
-
-        function openModal(event) {
-            if (event) event.preventDefault();
-            lastFocus = document.activeElement;
-
-            modal.hidden = false;
-            modal.classList.add('is-open');
-            document.body.classList.add('modal-open');
-
-            const closeBtn = modal.querySelector('.siger-modal__close');
-            if (closeBtn) closeBtn.focus();
-        }
-
-        function closeModal() {
-            if (modal.hidden) return;
-
-            modal.classList.remove('is-open');
-            modal.hidden = true;
-            document.body.classList.remove('modal-open');
-
-            if (lastFocus && typeof lastFocus.focus === 'function') {
-                lastFocus.focus();
-            }
-            lastFocus = null;
-        }
-
-        openers.forEach(function (el) {
-            el.addEventListener('click', openModal);
-        });
-
-        closers.forEach(function (el) {
-            el.addEventListener('click', closeModal);
-        });
-
-        modal.addEventListener('keydown', function (event) {
-            if (event.key === 'Escape') {
-                event.preventDefault();
-                closeModal();
-                return;
-            }
-
-            if (event.key !== 'Tab') return;
-
-            const items = focusableItems();
-            if (items.length === 0) return;
-
-            const first = items[0];
-            const last = items[items.length - 1];
-
-            if (event.shiftKey && document.activeElement === first) {
-                event.preventDefault();
-                last.focus();
-            } else if (!event.shiftKey && document.activeElement === last) {
-                event.preventDefault();
-                first.focus();
-            }
-        });
-    })();
-
-          /* ================= MODAL SEJARAH TELUK PAHAWANG ================= */
-    (function mutunModal() {
-        const modal = document.getElementById('mutunModal');
-        if (!modal) return;
-
-        const dialog = modal.querySelector('.siger-modal__dialog');
-        const openers = Array.prototype.slice.call(document.querySelectorAll('[data-teluk-open]'));
-        const closers = Array.prototype.slice.call(modal.querySelectorAll('[data-teluk-close]'));
-        let lastFocus = null;
-
-        function focusableItems() {
-            if (!dialog) return [];
-            return Array.prototype.slice.call(
-                dialog.querySelectorAll('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])')
-            ).filter(function (el) { return el.offsetParent !== null; });
-        }
-
-        function openModal(event) {
-            if (event) event.preventDefault();
-            lastFocus = document.activeElement;
-
-            modal.hidden = false;
-            modal.classList.add('is-open');
-            document.body.classList.add('modal-open');
-
-            const closeBtn = modal.querySelector('.siger-modal__close');
-            if (closeBtn) closeBtn.focus();
-        }
-
-        function closeModal() {
-            if (modal.hidden) return;
-
-            modal.classList.remove('is-open');
-            modal.hidden = true;
-            document.body.classList.remove('modal-open');
-
-            if (lastFocus && typeof lastFocus.focus === 'function') {
-                lastFocus.focus();
-            }
-            lastFocus = null;
-        }
-
-        openers.forEach(function (el) {
-            el.addEventListener('click', openModal);
-        });
-
-        closers.forEach(function (el) {
-            el.addEventListener('click', closeModal);
-        });
-
-        modal.addEventListener('keydown', function (event) {
-            if (event.key === 'Escape') {
-                event.preventDefault();
-                closeModal();
-                return;
-            }
-
-            if (event.key !== 'Tab') return;
-
-            const items = focusableItems();
-            if (items.length === 0) return;
-
-            const first = items[0];
-            const last = items[items.length - 1];
-
-            if (event.shiftKey && document.activeElement === first) {
-                event.preventDefault();
-                last.focus();
-            } else if (!event.shiftKey && document.activeElement === last) {
-                event.preventDefault();
-                first.focus();
-            }
-        });
-    })();
+})(); 
