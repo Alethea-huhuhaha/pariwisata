@@ -301,7 +301,9 @@
                 });
 
                 cards.forEach(function (card) {
-                    const show = filter === 'all' || card.dataset.category === filter;
+                    // data-category bisa berisi lebih dari satu kategori, mis. "bahari pantai"
+                    const categories = (card.dataset.category || '').split(/\s+/).filter(Boolean);
+                    const show = filter === 'all' || categories.indexOf(filter) !== -1;
                     card.classList.toggle('is-hidden', !show);
 
                     if (show) {
